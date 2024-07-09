@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>心理健康助手</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: #f9f9f9;
+    }
+    .container {
+      display: flex;
+      height: 100%;
+    }
+    .sidebar {
+      width: 25%;
+      background-color: #ffffff;
+      border-right: 1px solid #e4eaf0;
+      padding: 20px;
+    }
+    .sidebar h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .sidebar ul {
+      list-style: none;
+    }
+    .sidebar li {
+      margin-bottom: 10px;
+    }
+    .sidebar a {
+      text-decoration: none;
+      color: #6610f2;
+    }
+    .chat-box {
+      width: 75%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .chat-history {
+      flex-grow: 1;
+      padding: 20px;
+      overflow-y: auto;
+      background-color: #e4eaf0;
+    }
+    .chat-history .message {
+      margin-bottom: 20px;
+    }
+    .chat-history .user-message {
+      align-self: flex-start;
+      background-color: #68aef8;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      max-width: 70%;
+      word-wrap: break-word;
+      margin-bottom: 10px;
+    }
+    .chat-history .assistant-message {
+      align-self: flex-end;
+      background-color: #6610f2;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      max-width: 70%;
+      word-wrap: break-word;
+      margin-bottom: 10px;
+    }
+    .chat-form {
+      display: flex;
+      border-top: 1px solid #e4eaf0;
+      padding: 10px;
+      background-color: #fff;
+    }
+    .chat-form input {
+      flex-grow: 1;
+      border: 1px solid #68aef8;
+      border-radius: 5px;
+      padding: 10px;
+      margin-right: 10px;
+    }
+    .chat-form button {
+      background-color: #6610f2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center; padding: 20px 0; background-image: linear-gradient(to right, #68aef8, #6610f2); -webkit-background-clip: text; color: transparent;">心理健康助手</h1>
+  <div class="container">
+    <div class="sidebar">
+      <h3>推荐内容</h3>
+      <ul id="recommendations">
+        <li><a href="https://www.bilibili.com/video/BV1XP4y1G7gi">总是胡思乱想、心累、焦虑？如何停止精神内耗？</a></li>
+        <li><a href="https://www.bilibili.com/video/BV19z421B7Ua">心理健康第一步：理直气壮的自私</a></li>
+        <li><a href="https://www.bilibili.com/video/BV1DR4y1R7fu">焦虑/内耗/专注差，心理问题不怪你，是信息时代的锅|专注系列04</a></li>
+        <li><a href="https://www.bilibili.com/video/BV1wv4y177KF">青少年心理健康公益片——“郁见”</a></li>
+        <li><a href="https://www.bilibili.com/video/BV1Qz411v7kQ">心理课（做自己情绪的主人）微课视频</a></li>
+      </ul>
+    </div>
+    <div class="chat-box">
+      <div class="chat-history" id="content">
+        <div class="message assistant-message">
+          <p>AI: 欢迎来到心理健康咨询助手，我在这里帮助你解答任何心理方面的问题。请随时提问。</p>
+        </div>
+      </div>
+      <div id="sendMsg" class="chat-form">
+        <input id="msg" type="text" placeholder="在此输入您的问题..." required />
+        <button id="btn">发送</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
